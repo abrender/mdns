@@ -12,7 +12,6 @@ import (
 	"errors"
 	"net"
 	"net/netip"
-	"runtime"
 	"testing"
 	"time"
 
@@ -242,9 +241,6 @@ func TestValidCommunicationWithLoopbackInterface(t *testing.T) {
 }
 
 func TestValidCommunicationIPv6(t *testing.T) { //nolint:cyclop
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -313,10 +309,6 @@ func TestValidCommunicationIPv6(t *testing.T) { //nolint:cyclop
 }
 
 func TestValidCommunicationIPv46(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -361,10 +353,6 @@ func TestValidCommunicationIPv46(t *testing.T) {
 }
 
 func TestValidCommunicationIPv46Mixed(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -412,10 +400,6 @@ func TestValidCommunicationIPv46Mixed(t *testing.T) {
 }
 
 func TestValidCommunicationIPv46MixedLocalAddress(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -455,10 +439,6 @@ func TestValidCommunicationIPv46MixedLocalAddress(t *testing.T) {
 }
 
 func TestValidCommunicationIPv66Mixed(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -501,10 +481,6 @@ func TestValidCommunicationIPv66Mixed(t *testing.T) {
 }
 
 func TestValidCommunicationIPv66MixedLocalAddress(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
@@ -549,10 +525,6 @@ func TestValidCommunicationIPv66MixedLocalAddress(t *testing.T) {
 }
 
 func TestValidCommunicationIPv64Mixed(t *testing.T) {
-	if runtime.GOARCH == "386" {
-		t.Skip("IPv6 not supported on 386 for some reason")
-	}
-
 	lim := test.TimeOut(time.Second * 10)
 	defer lim.Stop()
 
